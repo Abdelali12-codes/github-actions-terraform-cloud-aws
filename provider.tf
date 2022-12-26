@@ -13,11 +13,10 @@ terraform {
   }
 }
  
-/*provider "aws" {
-  profile = "admin"
+provider "aws" {
+  #profile = "admin"
   region  ="us-east-2"
 }
-*/
 
 /*provider "helm" {
   kubernetes {
