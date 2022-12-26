@@ -4,6 +4,13 @@ terraform {
      source  = "hashicorp/aws"
    }
  }
+ cloud {
+    organization = "hashsicorp"
+
+    workspaces {
+      name = "terraform-aws"
+    }
+  }
 }
  
 provider "aws" {
@@ -11,7 +18,8 @@ provider "aws" {
   region  ="us-east-2"
 }
 
-provider "helm" {
+
+/*provider "helm" {
   kubernetes {
     config_path = "~/.kube/config"
     #exec {
@@ -24,7 +32,7 @@ provider "helm" {
     #}
   }
  }
-
+*/
 
 provider "kubernetes" {
   host                   = aws_eks_cluster.eks_cluster.endpoint
